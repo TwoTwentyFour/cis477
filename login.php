@@ -6,8 +6,18 @@ if (isset($_POST['login-submit']))
 
     $user_email = $_POST['mail'];
     $user_password = $_POST['pword'];
+    $sql = "SELECT * FROM users WHERE user_email = '" . $user_emailha . "' AND user_password = '" . SHA1($user_password) . "';";
 
-    header("Location: ./pages");
+    if (mysqli_query($connection, $sql))
+    {
+        echo("<h4 class=\"todo\">Fifth Check</h4>");
+        header("Location: ./pages");
+    }
+    else
+    {
+        echo("Error: " . mysqli_error($connection));
+    }
+
 }
 else
 {
@@ -22,11 +32,13 @@ else
         </form>
 
     ');
+    
+    readfile('./templates/footer.html');
 }
 
 ?>
 
 
-<?php readfile('./templates/footer.html'); ?>
+<?php  ?>
 
 

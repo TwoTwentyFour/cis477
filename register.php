@@ -13,7 +13,7 @@ if (isset($_POST['register-submit']))
     $sql = "INSERT INTO users (user_email, user_password) VALUES ('$user_email', '$protected_password');";
     mysqli_query($connection, $sql);
 
-    header("Location: ./pages/index.php?register=success");
+    header("Location: ./pages/");
 
 }
 else
@@ -29,9 +29,10 @@ else
         </form>
 
     ');
+
+    readfile('./templates/footer.html');
 }
 
 ?>
 
-<?php readfile('./templates/footer.html'); ?>
 
