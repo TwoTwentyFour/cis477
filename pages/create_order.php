@@ -1,5 +1,6 @@
-<?php 
-    readfile('../templates/header.html');
-    echo('<h3>Create Order Page Needs to be Built!</h3>');
-    readfile('../templates/footer.html');
-?>
+<?php readfile('../templates/header.html'); ?>
+<small class="todo">Create Order page needs to be built.</small><br>
+<small class="todo">Create Order page needs to be connected to the database.</small>
+<?php readfile('../templates/footer.html');?>
+
+
