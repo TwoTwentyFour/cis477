@@ -48,4 +48,4 @@
 <small class="todo">Home page needs to be connected to the database.</small>
 
 
-<?php readfile('./templates/footer.html'); ?>
+<?php readfile('../templates/footer.html'); ?>
