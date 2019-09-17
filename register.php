@@ -27,7 +27,7 @@ if (isset($_POST['register-submit']))
                 }
                 else
                 {
-                    readfile('./templates/header.html');
+                    require('./templates/header.php');
                     echo("There was an error with the database.");
                     readfile('./templates/footer.html');
                 }
@@ -36,14 +36,14 @@ if (isset($_POST['register-submit']))
     }
     else
     {
-        readfile('./templates/header.html');
+        require('./templates/header.php');
         echo ("<small class=\"todo\">Both password entries must match.<br>Please try again.</small>");
         readfile('./templates/footer.html');
     }
 }
 else
 {
-    readfile('./templates/header.html');
+    require('./templates/header.php');
 
     echo ('
         <form action="register.php" method="post">

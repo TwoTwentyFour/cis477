@@ -1,3 +1,5 @@
+<?php session_start(); ?>
+
 <!DOCTYPE html>
 <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8">
@@ -17,4 +19,16 @@
               <a style="color: white;" class="nav-link" href="./">Home</a>
             </li>
           </ul>
+          <?php
+              if (isset($_SESSION['user_email']))
+              {
+                 echo ('
+                    <form action="../logout.php" method="post">
+                        <div class="navbar navbar-right">
+                            <button type="submit" class="btn btn-danger">Logout</button>
+                        </div>
+                    </form>
+                ');
+               }
+          ?>
         </nav> 

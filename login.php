@@ -18,13 +18,15 @@ if (isset($_POST['login-submit']))
 
             if ($row = mysqli_fetch_assoc($result))
             {
-                mysqli_close($connection);
-                // TODO: Session stuff is going to happen right here. 
+                // Added the session stuff here.
+                session_start();
+                $_SESSION['user_email'] = $row['user_email'];
+                echo $_SESSION['user_email'];
                 header("Location: ./pages");
             }
             else
             {
-                readfile('./templates/header.html');
+                require('./templates/header.php');
                 echo ("<small class=\"todo\">Seems like either your use name or password is incorrect.<br>Please try again.</small>");
                 readfile('./templates/footer.html');
             }
@@ -41,7 +43,7 @@ if (isset($_POST['login-submit']))
 }
 else
 {
-    readfile('./templates/header.html');
+    require('./templates/header.php');
 
     echo ('
         <form action="login.php" method="post">

@@ -1,5 +1,5 @@
 <?php 
-    readfile('./templates/header.html');
+    require('./templates/header.php');
     readfile('./templates/welcome.html'); 
     readfile('./templates/footer.html');
 
