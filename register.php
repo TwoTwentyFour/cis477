@@ -13,22 +13,21 @@ if (isset($_POST['register-submit']))
         $stmt = mysqli_stmt_init($connection);
         if (mysqli_stmt_prepare($stmt, $sql))
         {
-            echo "Prepared";
             mysqli_stmt_bind_param($stmt, "ss", $user_email, SHA1($user_password));
             if (mysqli_stmt_execute($stmt))
             {
-                echo "Executed";
                 if (mysqli_affected_rows($connection) > 0)
                 {
-                    echo "Results";
                     mysqli_close($connectoin);
-                    // TODO: Session stuff is going to happen right here.
+                    session_start();
+                    $_SESSION['user_email'] = $user_email;
+                    $_SESSION['user_id'] = $user_id;
                     header("Location: ./pages/");
                 }
                 else
                 {
                     require('./templates/header.php');
-                    echo("There was an error with the database.");
+                    echo("Error: Could not update the database.");
                     readfile('./templates/footer.html');
                 }
             }

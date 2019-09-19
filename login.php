@@ -21,24 +21,28 @@ if (isset($_POST['login-submit']))
                 // Added the session stuff here.
                 session_start();
                 $_SESSION['user_email'] = $row['user_email'];
-                echo $_SESSION['user_email'];
+                $_SESSION['user_id'] = $row['user_id'];
                 header("Location: ./pages");
             }
             else
             {
                 require('./templates/header.php');
                 echo ("<small class=\"todo\">Seems like either your use name or password is incorrect.<br>Please try again.</small>");
-                readfile('./templates/footer.html');
+                require('./templates/footer.html');
             }
         }
         else
         {
+            require('./templates/header.php');
             echo "Error in SQL statment execution.";
+            require('./templates/footer.html');
         }
     }
     else
     {
+        require('./templates/header.php');
         echo "Error: " . mysqli_errno();
+        require('./templates/footer.php');
     }
 }
 else
