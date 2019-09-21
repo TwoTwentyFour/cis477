@@ -22,14 +22,14 @@ if (isset($_POST['view_order_submit']))
             {
                 echo 'Date ordered: ' . $row['order_date'] . '<br>';
                 echo 'Order Total: $' . $row['order_price']. '<br>';
-                echo 'User ID: ' . $row['user_id'] . '<br>';
+
+                include ('order_index.php'); 
             }
             else
             {
                 require('../templates/header.php');
                 echo "Seems like you don't have any orders to show.";
                 require('../templates/footer.php');
-
             }
         }
         else

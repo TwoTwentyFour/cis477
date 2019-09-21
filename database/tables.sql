@@ -11,7 +11,7 @@ CREATE TABLE users (
 
 CREATE TABLE orders (
 	order_id INT AUTO_INCREMENT NOT NULL,
-	order_date DATETIME NOT NULL,
+	order_date DATE NOT NULL,
 	order_price DECIMAL(10, 2) NOT NULL,
     user_id INT NOT NULL,
 	PRIMARY KEY (order_id),
@@ -44,8 +44,18 @@ INSERT INTO products (product_name, product_description, product_price) VALUES (
 INSERT INTO products (product_name, product_description, product_price) VALUES ('Kong Dog Whistle', 'Kong themed doggie whistle.', '3.00');
 INSERT INTO products (product_name, product_description, product_price) VALUES ('Kong Dog Collar', 'Kong themed collar.', '5.00');
 
+INSERT INTO orders (order_date, order_price, user_id) VALUES ('2019-9-9', '28.00', '1');
+INSERT INTO orders (order_date, order_price, user_id) VALUES ('2019-9-12', '8.00', '1');
+INSERT INTO orders (order_date, order_price, user_id) VALUES ('2019-9-16', '16.00', '1');
+INSERT INTO orders (order_date, order_price, user_id) VALUES ('2019-9-19', '36.00', '1');
 
-
+INSERT INTO orderIndex (order_id, product_id) VALUES ('1', '1');
+INSERT INTO orderIndex (order_id, product_id) VALUES ('1', '2');
+INSERT INTO orderIndex (order_id, product_id) VALUES ('2', '4');
+INSERT INTO orderIndex (order_id, product_id) VALUES ('3', '2');
+INSERT INTO orderIndex (order_id, product_id) VALUES ('4', '1');
+INSERT INTO orderIndex (order_id, product_id) VALUES ('4', '2');
+INSERT INTO orderIndex (order_id, product_id) VALUES ('4', '4');
 
 
 
