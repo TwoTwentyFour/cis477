@@ -46,12 +46,6 @@
                                 </form>
                             </td>
                             <td style="float: right;">
-                                <form action="edit_order.php" method="post">
-                                    <input type="hidden" name="order_id" value="' . $row['order_id'] .'">
-                                    <button type="submit" name="edit_order_submit" class="btn">Edit</button>
-                                </form>
-                            </td>
-                            <td style="float: right;">
                                 <form action="view_order.php" method="post">
                                     <input type="hidden" name="order_id" value="' . $row['order_id'] .'">
                                     <button type="submit" name="view_order_submit" class="btn">View</button>

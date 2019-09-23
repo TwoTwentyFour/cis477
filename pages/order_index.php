@@ -12,32 +12,61 @@ if ($result = mysqli_query($connection, $sql))
             case 1:
                 // These should all be forms, use hidden input and
                 // view_product.php as the action.
-                echo "Kong Classic <br>";
+                echo '<form action="view_product.php" method="post">
+                    <input type="hidden" name="product_id" value="1">
+                    <button class="btn" type="submit" name="view_product_submit">Kong Classic</button>                    
+                </form>';
                 break;
             case 2:
-                echo "Kong Large <br>";
+                echo '<form action="view_product.php" method="post">
+                    <input type="hidden" name="product_id" value="2">
+                    <button class="btn" type="submit" name="view_product_submit">Kong Large</button>                    
+                </form>';
                 break;
             case 3:
-                echo "Kong Medium <br>";
+                echo '<form action="view_product.php" method="post">
+                    <input type="hidden" name="product_id" value="3">
+                    <button class="btn" type="submit" name="view_product_submit">Kong Medium</button>                    
+                </form>';
                 break;
             case 4:
-                echo "Kong Small <br>";
+                echo '<form action="view_product.php" method="post">
+                    <input type="hidden" name="product_id" value="4">
+                    <button class="btn" type="submit" name="view_product_submit">Kong Small</button>                    
+                </form>';
                 break;
             case 5:
-                echo "Kong Extreme <br>";
+                echo '<form action="view_product.php" method="post">
+                    <input type="hidden" name="product_id" value="5">
+                    <button class="btn" type="submit" name="view_product_submit">Kong Extreme</button>                    
+                </form>';
                 break;
             case 6:
                 echo "Dog Treats <br>";
+                echo '<form action="view_product.php" method="post">
+                    <input type="hidden" name="product_id" value="6">
+                    <button class="btn" type="submit" name="view_product_submit">Dog Treats</button>                    
+                </form>';
                 break;
             case 7:
                 echo "Dog Leash <br>";
+                echo '<form action="view_product.php" method="post">
+                    <input type="hidden" name="product_id" value="7">
+                    <button class="btn" type="submit" name="view_product_submit">Dog Leash</button>                    
+                </form>';
                 break;
             case 8:
-                echo "Dog Whistle <br>";
+                 echo '<form action="view_product.php" method="post">
+                    <input type="hidden" name="product_id" value="8">
+                    <button class="btn" type="submit" name="view_product_submit">Dog Whistle</button>                    
+                 </form>';
                 break;
             case 9:
-                echo "Dog Collar <br>";
-                break;
+                  echo '<form action="view_product.php" method="post">
+                    <input type="hidden" name="product_id" value="9">
+                    <button class="btn" type="submit" name="view_product_submit">Dog Collar</button>                    
+                  </form>';
+                  break;
         }
     }
 }

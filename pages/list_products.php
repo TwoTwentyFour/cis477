@@ -18,6 +18,5 @@ else
     echo 'Error: Could not execute SQL statment.';
 }
 
-
-require '../templates/footer.php';
+require '../templates/footer.html';
 ?>

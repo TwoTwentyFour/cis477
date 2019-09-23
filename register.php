@@ -35,9 +35,24 @@ if (isset($_POST['register-submit']))
     }
     else
     {
+        /*
         require('./templates/header.php');
         echo ("<small class=\"todo\">Both password entries must match.<br>Please try again.</small>");
         readfile('./templates/footer.html');
+         */
+        require('./templates/header.php');
+        echo '<h4 style="color: tomato;">Both passwords must match!</h4>';
+        echo ('
+            <form action="register.php" method="post">
+                <input type="email" name="mail" placeholder="Email" required="requiered">
+                <input type="password" name="pword" placeholder="Password" required="required">
+                <input type="password" name="pword-check" placeholder="Re-Type Password" required="required">
+                <button class="btn btn-success" name="register-submit" type="submit">Register</button>
+            </form>
+        ');
+
+        readfile('./templates/footer.html');
+
     }
 }
 else
