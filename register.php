@@ -26,9 +26,7 @@ if (isset($_POST['register-submit']))
                 }
                 else
                 {
-                    require('./templates/header.php');
                     echo("Error: Could not update the database.");
-                    readfile('./templates/footer.html');
                 }
             }
         }

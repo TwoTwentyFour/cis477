@@ -21,7 +21,7 @@
             require '../database.connection.php';
 
             $user_id = $_SESSION['user_id'];
-            $sql = "SELECT * FROM orders WHERE user_id = ?";
+            $sql = "SELECT * FROM orders WHERE user_id = ? ORDER BY `order_id` DESC";
             $stmt = mysqli_stmt_init($connection);
 
             if (mysqli_stmt_prepare($stmt, $sql))

@@ -27,8 +27,15 @@ if (isset($_POST['login-submit']))
             else
             {
                 require('./templates/header.php');
-                echo ("<small class=\"todo\">Seems like either your use name or password is incorrect.<br>Please try again.</small>");
-                require('./templates/footer.html');
+                echo '<h4 style="color: tomato;">Seems like either your email or password was entered incorrectly.</h4>';
+                echo ('
+                    <form action="login.php" method="post">
+                        <input type="email" name="mail" placeholder="Email" required="required">
+                        <input type="password" name="pword" placeholder="Password" required="required">
+                        <button class="btn btn-success" type="submit" name="login-submit">Login</button>
+                    </form>
+                ');
+                readfile('./templates/footer.html');
             }
         }
         else
