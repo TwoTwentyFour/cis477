@@ -18,11 +18,11 @@ if (isset($_POST['register-submit']))
             {
                 if (mysqli_affected_rows($connection) > 0)
                 {
-                    mysqli_close($connectoin);
                     session_start();
                     $_SESSION['user_email'] = $user_email;
-                    $_SESSION['user_id'] = $user_id;
+                    $_SESSION['user_id'] = mysqli_insert_id($connection);
                     header("Location: ./pages/");
+                
                 }
                 else
                 {
