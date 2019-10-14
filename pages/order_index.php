@@ -42,7 +42,6 @@ if ($result = mysqli_query($connection, $sql))
                 </form>';
                 break;
             case 6:
-                echo "Dog Treats <br>";
                 echo '<form action="view_product.php" method="post">
                     <input type="hidden" name="product_id" value="6">
                     <button class="btn" type="submit" name="view_product_submit">Dog Treats</button>                    
