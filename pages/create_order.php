@@ -76,7 +76,7 @@ else
     $sql = "SELECT * FROM products;";
     if ($result = mysqli_query($connection, $sql))
     {
-        echo '<form action="create_order.php" method="post">';
+        echo '<form action="create_order.php" method="post"  onsubmit="return confirm(\'Are you sure you want to submit this order?\');">';
         while ($row = mysqli_fetch_assoc($result))
         {
             echo '<input type="checkbox" name="selected_items[]" value="' . $row['product_id'] . '">';

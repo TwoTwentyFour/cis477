@@ -40,7 +40,7 @@
                             <td>' . $row['order_date'] . '</td>
                             <td>' . $row['order_price'] . '</td>
                             <td style="float: right;">
-                                <form action="delete_order.php" method="post">
+                                <form action="delete_order.php" method="post" onsubmit="return confirm(\'Are you sure you want to delete this order?\');">
                                     <input type="hidden" name="order_id" value="' . $row['order_id'] .'">
                                    <button type="submit" name="delete_order_submit" class="btn">Delete</button>
                                 </form>
